@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGAssignment.Classes;
+using System;
 
 namespace RPGAssignment
 {
@@ -8,5 +9,10 @@ namespace RPGAssignment
         {
             Console.WriteLine("Hello World!");
         }
+
+        private Character Sven = new Character()
+        {
+            Sven.
+        };
     }
 }
