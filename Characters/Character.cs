@@ -3,13 +3,20 @@ using RPGAssignment.Items;
 using System.Collections.Generic;
 
 namespace RPGAssignment.Classes
-{
-    class Character
+{   // Base class to create the other subclasses like Mage, Rouge ect
+    abstract class Character
     {
-        public string CharacterClass { get; set; }
         public int Level { get; set; }
-        public Stats Stats { get; set; }
+        public Stats BaseStats { get; set; }
         private readonly Dictionary<Slot, Item> equpment;
+
+        // Protected Constructor because Character class is abstract
+        protected Character()
+        {
+            BaseStats = default;
+            Level = 1;
+            equpment = new Dictionary<Slot, Item>();
+        }
     }
 
 
