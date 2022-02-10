@@ -1,12 +1,10 @@
-﻿using RPGAssignment.Classes;
-
-namespace RPGAssignment.Characters
+﻿namespace RPGAssignment.Characters
 {
-    class Rouge : Character
-    {
-        public Rouge()
-        {
-            Stats = new Stats(2, 6, 1);
-        }
-    }
+    //class Rouge : Character
+    //{
+    //    public Rouge()
+    //    {
+    //        BaseStats = new Stats(2, 6, 1);
+    //    }
+    //}
 }

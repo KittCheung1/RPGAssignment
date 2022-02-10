@@ -1,13 +1,11 @@
-﻿using RPGAssignment.Classes;
-
-namespace RPGAssignment.Characters
+﻿namespace RPGAssignment.Characters
 {
-    class Ranger : Character
-    {
-        public Ranger()
-        {
-            Stats = new Stats(1, 7, 1);
+    //class Ranger : Character
+    //{
+    //    public Ranger()
+    //    {
+    //        BaseStats = new Stats(1, 7, 1);
 
-        }
-    }
+    //    }
+    //}
 }

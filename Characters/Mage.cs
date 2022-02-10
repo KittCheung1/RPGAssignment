@@ -1,12 +1,11 @@
-﻿using RPGAssignment.Classes;
-
-namespace RPGAssignment.Characters
+﻿namespace RPGAssignment.Characters
 {
-    class Mage : Character
-    {
-        public Mage()
-        {
-            Stats = new Stats(1, 1, 8);
-        }
-    }
+    //class Mage : Character
+    //{
+    //    public Mage()
+    //    {
+    //        BaseStats = new Stats(1, 1, 8);
+    //    }
+
+    //}
 }

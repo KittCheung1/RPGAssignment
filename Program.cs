@@ -1,4 +1,4 @@
-﻿using RPGAssignment.Classes;
+﻿using RPGAssignment.Characters;
 using System;
 
 namespace RPGAssignment
@@ -8,11 +8,10 @@ namespace RPGAssignment
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Warrior warrior = new Warrior("Sven");
+            warrior.PrintStats();
         }
 
-        private Character Sven = new Character()
-        {
-            Sven.
-        };
     }
 }
