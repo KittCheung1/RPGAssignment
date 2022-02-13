@@ -1,4 +1,6 @@
-﻿namespace RPGAssignment.Items
+﻿using RPGAssignment.Characters;
+
+namespace RPGAssignment.Items
 {
     abstract class Item
     {
@@ -6,11 +8,14 @@
         public int ReqLevel { get; }
         public Slot Slot { get; }
 
-        protected Item(string name, int reqLevel, Slot slot)
+        public ClassType CharacterClassType { get; }
+
+        protected Item(string name, int reqLevel, Slot slot, ClassType classType)
         {
             Name = name;
             ReqLevel = reqLevel;
             Slot = slot;
+            CharacterClassType = classType;
         }
     }
 }
