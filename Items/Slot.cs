@@ -2,9 +2,9 @@
 {
     enum Slot
     {
-        Head,
-        Body,
-        Legs,
-        Weapon
+        HEAD,
+        BODY,
+        LEGS,
+        WEAPON
     }
 }
