@@ -1,6 +1,7 @@
 ﻿namespace RPGAssignment.Factory
 {
-    internal class WeaponFactory
+    abstract class WeaponFactory
     {
+        //public abstract Items Weapon { get; }
     }
 }
