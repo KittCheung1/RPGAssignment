@@ -9,8 +9,8 @@ namespace RPGAssignment
         {
             Console.WriteLine("Hello World!");
 
-            Warrior warrior = new Warrior("Sven");
-            warrior.PrintStats();
+            var warrior = new Warrior("Sven");
+            warrior.levelUp();
         }
 
     }

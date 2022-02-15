@@ -3,15 +3,15 @@ using System;
 
 namespace RPGAssignment.Items
 {
+    /// <summary>
+    /// Armor class inherit from Item class. Property of Stats for armors. Constructor checking Slot 
+    /// that only armor-type of items can be stored in the slot and not weapon-type items.
+    /// </summary>
     class Armor : Item
     {
         public Stats Stats { get; set; }
 
-        //public string Cloth { get; set; }
-        //public string Leather { get; set; }
-        //public string Mail { get; set; }
-        //public string Plate { get; set; }
-        public Armor(string name, int reqLevel, Slot slot, ClassType classType, Stats stats) : base(name, reqLevel, slot, classType)
+        public Armor(string name, int reqLevel, ClassType classType, Slot slot, Stats stats) : base(name, reqLevel, classType, slot)
         {
             Stats = stats;
             if (Slot == Slot.WEAPON)

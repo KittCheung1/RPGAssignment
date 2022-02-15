@@ -1,6 +1,9 @@
 ﻿
 namespace RPGAssignment.Characters
 {
+    /// <summary>
+    /// Stats class with properties of the 3 main stats. A stats operator to count new stats on level up
+    /// </summary>
     class Stats
     {
         public Stats(int strength, int dexterity, int intelligence)

@@ -2,6 +2,9 @@
 
 namespace RPGAssignment.Items
 {
+    /// <summary>
+    /// Item class.
+    /// </summary>
     abstract class Item
     {
         public string Name { get; }
@@ -10,7 +13,7 @@ namespace RPGAssignment.Items
 
         public ClassType CharacterClassType { get; }
 
-        protected Item(string name, int reqLevel, Slot slot, ClassType classType)
+        protected Item(string name, int reqLevel, ClassType classType, Slot slot)
         {
             Name = name;
             ReqLevel = reqLevel;
