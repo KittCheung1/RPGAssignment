@@ -5,7 +5,7 @@ namespace RPGAssignment.ExceptionHandling
     /// <summary>
     /// Class to handle Weapon Exceptions
     /// </summary>
-    internal class InvalidWeaponException : Exception
+    public class InvalidWeaponException : Exception
     {
         public InvalidWeaponException()
         {

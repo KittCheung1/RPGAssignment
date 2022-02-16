@@ -6,7 +6,7 @@ namespace RPGAssignment.Factory
     /// <summary>
     /// Factory of Creating weapon setting requirement for each weapon to each Classtype
     /// </summary>
-    abstract class WeaponFactory
+    public abstract class WeaponFactory
     {
         public static Weapon CreateStaff()
         {
@@ -36,6 +36,11 @@ namespace RPGAssignment.Factory
         public static Weapon CreateAxe()
         {
             return new Weapon("Common Axe", 1, ClassType.WARRIOR, 7, 1.1);
+        }
+
+        public static Weapon CreateAxeLvl2()
+        {
+            return new Weapon("Common Axe", 2, ClassType.WARRIOR, 7, 1.1);
         }
 
         public static Weapon CreateHammer()

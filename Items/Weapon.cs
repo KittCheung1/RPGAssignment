@@ -5,7 +5,7 @@ namespace RPGAssignment.Items
     /// <summary>
     /// Weapon class inherit from Item class. Property of Stats for weapon. Constructor checking Slot 
     /// </summary>
-    class Weapon : Item
+    public class Weapon : Item
     {
 
         public int Damage { get; }
@@ -15,6 +15,7 @@ namespace RPGAssignment.Items
         {
             Damage = damage;
             AttackSpeed = attackSpeed;
+            Slot = Slot.WEAPON;
         }
 
     }

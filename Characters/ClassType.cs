@@ -3,7 +3,7 @@
     /// <summary>
     /// Enum of different ClassTypes, setting them on Binarynumber
     /// </summary>
-    enum ClassType
+    public enum ClassType
     {
         ROUGE = 1,
         MAGE = 2,

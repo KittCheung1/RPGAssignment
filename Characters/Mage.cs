@@ -2,7 +2,7 @@
 
 namespace RPGAssignment.Characters
 {
-    class Mage : Character
+    public class Mage : Character
     {
         public Mage(string name) : base(name)
         {

@@ -4,7 +4,7 @@ namespace RPGAssignment.Characters
     /// <summary>
     /// Stats class with properties of the 3 main stats. A stats operator to count new stats on level up
     /// </summary>
-    class Stats
+    public class Stats
     {
         public Stats(int strength, int dexterity, int intelligence)
         {
@@ -19,7 +19,7 @@ namespace RPGAssignment.Characters
 
         public static Stats operator +(Stats lhs, Stats rhs)
         {
-            return new Stats(lhs.Strength + rhs.Strength, rhs.Dexterity + rhs.Dexterity, lhs.Intelligence + rhs.Intelligence);
+            return new Stats(lhs.Strength + rhs.Strength, lhs.Dexterity + rhs.Dexterity, lhs.Intelligence + rhs.Intelligence);
         }
 
 

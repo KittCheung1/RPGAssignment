@@ -7,7 +7,7 @@ namespace RPGAssignment.Items
     /// Armor class inherit from Item class. Property of Stats for armors. Constructor checking Slot 
     /// that only armor-type of items can be stored in the slot and not weapon-type items.
     /// </summary>
-    class Armor : Item
+    public class Armor : Item
     {
         public Stats Stats { get; set; }
 

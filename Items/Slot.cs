@@ -3,7 +3,7 @@
     /// <summary>
     /// Enum of Item Slots
     /// </summary>
-    enum Slot
+    public enum Slot
     {
         HEAD,
         BODY,

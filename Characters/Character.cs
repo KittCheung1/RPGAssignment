@@ -11,7 +11,7 @@ namespace RPGAssignment.Characters
     /// Base class to create the other subclasses like Mage, Rouge ect
     /// Abstract because base class is not supposed to be instantiated
     /// </summary>
-    abstract class Character
+    public abstract class Character
     {
         //properties
         public string Name { get; set; }
@@ -30,9 +30,9 @@ namespace RPGAssignment.Characters
             equipment = new Dictionary<Slot, Item>();
         }
         /// <summary>
-        /// LevelUp increases level with 1, calls a method onLevelUp()
+        /// LevelUp increases level with 1, calls a method OnLevelUp()
         /// </summary>
-        public void levelUp()
+        public void LevelUp()
         {
             Level++;
             OnLevelUp();
@@ -44,17 +44,17 @@ namespace RPGAssignment.Characters
         /// <param name="item"></param>
         public void EquipItem(Item item)
         {
-            if (item is Weapon weapon)
+            if (item is Weapon)
             {
-                CheckEquipWeapon(weapon);
+                CheckEquipWeapon(item as Weapon);
             }
-            if (item is Armor armor)
+            else if (item is Armor)
             {
-                CheckEquipArmor(armor);
+                CheckEquipArmor((item as Armor));
             }
             else
             {
-                throw new InvalidOperationException("");
+                throw new InvalidOperationException("Its not a weapon nor an armor");
             }
 
             equipment[item.Slot] = item;
@@ -64,16 +64,32 @@ namespace RPGAssignment.Characters
         /// </summary>
         /// <param name="weapon"></param>
         /// <exception cref="Exception"></exception>
-        public void CheckEquipWeapon(Weapon weapon)
+        public string CheckEquipWeapon(Weapon weapon)
         {
-            if (weapon.ReqLevel > Level)
+            try
             {
-                throw new InvalidWeaponException($"Your level is too low to equip this weapon. Required level = {weapon.ReqLevel}. Current level = {Level}");
+                if (weapon.ReqLevel == Level)
+                {
+                    return "New weapon equipped!";
+                }
+                if (weapon.ReqLevel > Level)
+                {
+                    throw new InvalidWeaponException($"Your level is too low to equip this weapon. Required level = {weapon.ReqLevel}. Current level = {Level}");
+                }
+                if (!CanEquipWeapon(weapon))
+                {
+                    throw new InvalidWeaponException($"You are the wrong class to equip this weapon");
+                }
+
+                return "false";
             }
-            if (!CanEquipWeapon(weapon))
+
+            catch (InvalidWeaponException ex)
             {
-                throw new InvalidWeaponException($"You are the wrong class to equip this weapon");
+                return ex.Message;
             }
+
+
         }
 
         /// <summary>
@@ -81,15 +97,28 @@ namespace RPGAssignment.Characters
         /// </summary>
         /// <param name="armor"></param>
         /// <exception cref="Exception"></exception>
-        public void CheckEquipArmor(Armor armor)
+        public string CheckEquipArmor(Armor armor)
         {
-            if (armor.ReqLevel > Level)
+            try
             {
-                throw new InvalidArmorException($"Your level is too low to equip this armor. Required level = {armor.ReqLevel}. Current level = {Level}");
+                if (armor.ReqLevel == Level)
+                {
+                    return "New armor equipped!";
+                }
+                if (armor.ReqLevel > Level)
+                {
+                    throw new InvalidArmorException($"Your level is too low to equip this armor. Required level = {armor.ReqLevel}. Current level = {Level}");
+                }
+                if (!CanEquipArmor(armor))
+                {
+                    throw new InvalidArmorException($"You are the wrong class to equip this armor");
+                }
+                return "false";
             }
-            if (!CanEquipArmor(armor))
+            catch (InvalidArmorException ex)
             {
-                throw new InvalidArmorException($"You are the wrong class to equip this armor");
+
+                return ex.Message;
             }
         }
         /// <summary>

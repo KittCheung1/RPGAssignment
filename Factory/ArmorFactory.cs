@@ -6,7 +6,7 @@ namespace RPGAssignment.Factory
     /// <summary>
     /// Factory of Creating armor setting requirement for each armor to each Classtype and Slot
     /// </summary>
-    internal class ArmorFactory
+    public abstract class ArmorFactory
     {
         public static Armor CreateClothHead()
         {
@@ -30,6 +30,12 @@ namespace RPGAssignment.Factory
         {
             var stats = new Stats(1, 0, 0);
             return new Armor("Common plate body armor", 1, ClassType.WARRIOR, Slot.BODY, stats);
+        }
+
+        public static Armor CreatePlateBodyLvl2()
+        {
+            var stats = new Stats(1, 0, 0);
+            return new Armor("Common plate body armor", 2, ClassType.WARRIOR, Slot.BODY, stats);
         }
     }
 }
