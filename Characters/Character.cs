@@ -68,19 +68,18 @@ namespace RPGAssignment.Characters
         {
             try
             {
-                if (weapon.ReqLevel == Level)
-                {
-                    return "New weapon equipped!";
-                }
                 if (weapon.ReqLevel > Level)
                 {
                     throw new InvalidWeaponException($"Your level is too low to equip this weapon. Required level = {weapon.ReqLevel}. Current level = {Level}");
                 }
-                if (!CanEquipWeapon(weapon))
+                else if (!CanEquipWeapon(weapon))
                 {
                     throw new InvalidWeaponException($"You are the wrong class to equip this weapon");
                 }
-
+                else if (weapon.ReqLevel == Level)
+                {
+                    return "New weapon equipped!";
+                }
                 return "false";
             }
 
@@ -101,17 +100,17 @@ namespace RPGAssignment.Characters
         {
             try
             {
-                if (armor.ReqLevel == Level)
-                {
-                    return "New armor equipped!";
-                }
                 if (armor.ReqLevel > Level)
                 {
                     throw new InvalidArmorException($"Your level is too low to equip this armor. Required level = {armor.ReqLevel}. Current level = {Level}");
                 }
-                if (!CanEquipArmor(armor))
+                else if (!CanEquipArmor(armor))
                 {
                     throw new InvalidArmorException($"You are the wrong class to equip this armor");
+                }
+                else if (Level >= armor.ReqLevel)
+                {
+                    return "New armor equipped!";
                 }
                 return "false";
             }
