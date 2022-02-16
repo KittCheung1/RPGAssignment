@@ -1,4 +1,4 @@
-﻿using System;
+﻿using RPGAssignment.Characters;
 
 namespace RPGAssignment
 {
@@ -6,7 +6,10 @@ namespace RPGAssignment
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Warrior warrior = new Warrior("warrior");
+            warrior.DisplayCharacterStats();
+
         }
+
     }
 }
